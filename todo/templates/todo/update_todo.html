@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}update todo{% endblock title %}
+{% block content %}
+
+<div id = 'edit-todo-form'>
+    <form method="POST" id="edit-todo-form" dir='ltr' class="d-flex justify-content-center align-items-center mb-4">
+      {% csrf_token %}
+        <div class="form-outline flex-fill">
+        <input type="text" id="title" name="title" class="form-control form-control-lg" value="{{todo.title}}" />
+        <label class="form-label" for="title"></label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg ms-2">Update</button>
+    </form>
+</div>
+
+{% endblock content %}
